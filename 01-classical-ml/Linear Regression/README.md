@@ -25,6 +25,15 @@ The models are trained on `log1p(price_aprox_usd)` to reduce target skew. Predic
 
 Model selection should be based on validation or cross-validation results, with the test set reserved for the final report. Remaining error reflects information not included in the three-feature model, such as finer-grained location, amenities, and property age.
 
+# Model Comparison
+
+| Model | Train RMSE | Test RMSE |
+| :--- | :---: | :---: |
+| **Baseline** | 115,906.39 | 111,243.98 |
+| **Linear Regression** | 95,877.50 | 93,179.66 |
+| **Ridge (CV-tuned)** | 95,877.63 | 93,172.18 |
+| **Lasso (CV-tuned)** | 95,877.50 | 93,179.66 |
+
 ## Tools
 
 Python, pandas, NumPy, matplotlib, seaborn, scikit-learn, category-encoders, and Jupyter Notebook.
