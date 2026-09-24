@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="03167cff-4a92-4611-99c4-702d96266950" name="Changes" comment="Polishing the notebook" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dipson-mishra&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dipson-mishra/Machine-Learning.git&quot;,
+    &quot;accountId&quot;: &quot;fd4a9738-a1fb-45c3-bb22-dbc2a7f50486&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.38039935602742" />
+      <entry key="MS500" value="2.2463878908536428" />
+      <entry key="S2" value="2.900551038507155" />
+      <entry key="S5" value="3.3551162170029896" />
+      <entry key="S10" value="3.645976683127601" />
+      <entry key="S30" value="8.338860645735" />
+      <entry key="S60" value="24.802877030364165" />
+      <entry key="M2" value="55.452193165017015" />
+      <entry key="M5" value="101.65454756220335" />
+      <entry key="M10" value="142.9751670312828" />
+      <entry key="M15" value="179.91969133578962" />
+      <entry key="M30" value="262.98167688776203" />
+      <entry key="H1" value="343.87869255717226" />
+      <entry key="H2" value="402.0034409743542" />
+      <entry key="H4" value="437.0893611087589" />
+      <entry key="D1" value="469.9836374861395" />
+      <entry key="W1" value="475.9883198790643" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.8012001317319224E-237" />
+      <entry key="S5" value="2.0055097977001132E-95" />
+      <entry key="S10" value="4.478291859292011E-48" />
+      <entry key="S30" value="1.6483045897644928E-16" />
+      <entry key="S60" value="1.2839745153554748E-8" />
+      <entry key="M2" value="1.143630022550191E-4" />
+      <entry key="M5" value="0.03047380897688023" />
+      <entry key="M10" value="0.2262782816262676" />
+      <entry key="M15" value="0.45741511149032554" />
+      <entry key="M30" value="0.9452345346713941" />
+      <entry key="H1" value="1.3708030206080974" />
+      <entry key="H2" value="1.6545250744890923" />
+      <entry key="H4" value="1.8187343633379824" />
+      <entry key="D1" value="1.968528739005692" />
+      <entry key="W1" value="1.9954721988869504" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.2681779335605883" />
+      <entry key="MS500" value="2.2099674424216755" />
+      <entry key="S2" value="2.8890228286114827" />
+      <entry key="S5" value="3.349785302683636" />
+      <entry key="S10" value="3.6430712570422794" />
+      <entry key="S30" value="8.33613741232078" />
+      <entry key="S60" value="24.797297926845445" />
+      <entry key="M2" value="55.44455164447404" />
+      <entry key="M5" value="101.67791172786455" />
+      <entry key="M10" value="143.19401921128053" />
+      <entry key="M15" value="180.3693686207057" />
+      <entry key="M30" value="263.9199983433619" />
+      <entry key="H1" value="345.24463834879634" />
+      <entry key="H2" value="403.6550525366312" />
+      <entry key="H4" value="438.90649528119224" />
+      <entry key="D1" value="471.951877399478" />
+      <entry key="W1" value="477.9837502440338" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Ji4IyeLp1L4WInHdO75LP1h5bc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;X:/Machine-Learning&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Machine-Learning\01-classical-ml\Linear Regression\notebooks" />
+      <recent name="X:\Machine-Learning\01-classical-ml\Linear Regression" />
+      <recent name="X:\Machine-Learning\01-classical-ml\project-name" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-821f704e66d9-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.9437.214" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03167cff-4a92-4611-99c4-702d96266950" name="Changes" comment="" />
+      <created>1790130478529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790130478529</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Including Lasso and Ridge models (regularized linear models)">
+      <option name="closed" value="true" />
+      <created>1790135897133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1790135897133</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Including Lasso and Ridge models (regularized linear models)">
+      <option name="closed" value="true" />
+      <created>1790136170160</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1790136170160</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Polishing the notebook">
+      <option name="closed" value="true" />
+      <created>1790213555593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1790213555593</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Including Lasso and Ridge models (regularized linear models)" />
+    <MESSAGE value="Polishing the notebook" />
+    <option name="LAST_COMMIT_MESSAGE" value="Polishing the notebook" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>file://$PROJECT_DIR$/01-classical-ml/Linear Regression/notebooks/real-estate.ipynb</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
