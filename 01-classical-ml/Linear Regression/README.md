@@ -1,4 +1,4 @@
-# Mexico City Real Estate Price Prediction
+# Linear, Lasso and Ridge Regression for Mexico City Real Estate
 
 This project explores Mexico City real-estate listings and compares baseline, ordinary least-squares, Ridge, and Lasso regression models. The complete workflow is documented in [`notebooks/real-estate.ipynb`](notebooks/real-estate.ipynb).
 
