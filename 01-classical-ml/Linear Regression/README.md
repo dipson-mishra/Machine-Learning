@@ -1,7 +1,13 @@
 # Linear, Lasso and Ridge Regression for Mexico City Real Estate
 
+Linear Regression tries to fit a line through data by making errors as small as possible. But if features overlap or you have too many variables, the model gets overly sensitive and overfits.Regularization fixes this by adding a penalty for having large coefficients ($\beta$). The hyperparameter $\lambda$ controls how strict that penalty is.
+
 This project explores Mexico City real-estate listings and compares baseline, ordinary least-squares, Ridge, and Lasso regression models. The complete workflow is documented in [`notebooks/real-estate.ipynb`](notebooks/real-estate.ipynb).
 
+The 3 Models at a Glance
+- **Linear Regression**: No penalty. Lets coefficients grow as large as needed to fit the training data.
+- **Ridge ($L_2$)**: Penalizes squared values. Shrinks all coefficients close to zero, but keeps every feature. Best for handling correlated variables.
+- **Lasso ($L_1$)**: Penalizes absolute values. Forces unhelpful coefficients to exact zero, effectively dropping them. Best for auto-selecting features.
 ## Repository layout
 
 - `notebooks/real-estate.ipynb` — data exploration, cleaning, visualization, feature engineering, modeling, and evaluation.
