@@ -21,7 +21,6 @@ Linear Combination (y') ➔ Sigmoid Function ➔ Probability (0 to 1) ➔ Classi
 1. **Raw Prediction ($y'$):** Calculated using a linear combination of input features 
 2. **Sigmoid Transformation:** Transforms $y'$ into a valid probability:
 3. **Classification Decision:** The output probability is compared against a defined **classification threshold** (e.g., 0.50):
-   * If the probability is greater than or equal to the threshold, the prediction is classified as the positive class.
 
 ---
 
