@@ -30,8 +30,7 @@ The `notebooks/sentiment_analysis.ipynb` notebook uses TF–IDF features and log
 
 ### Input data
 
-Place the dataset at `data/sentiment.csv`. It must contain `clean_text` and `category` columns, with sentiment labels `-1`, `0`, and `1`. The dataset is excluded from Git because it is local input data; use data you have permission to use and share.
-
+Place the dataset at `data/sentiment.csv`. It must contain `clean_text` and `category` columns, with sentiment labels `-1`, `0`, and `1`. 
 ### Run the notebook
 
 From the repository root, install the dependencies and launch Jupyter:
@@ -41,7 +40,7 @@ python -m pip install -r requirements.txt
 python -m jupyter notebook notebooks/sentiment_analysis.ipynb
 ```
 
-The notebook uses a fixed random seed and a stratified 80/20 split. Scores describe this dataset and split and are a baseline, not a guarantee of performance on new text.
+The notebook uses a fixed random seed and a stratified 80/20 split. 
 
 
 
