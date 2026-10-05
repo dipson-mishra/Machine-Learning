@@ -24,5 +24,24 @@ Linear Combination (y') ➔ Sigmoid Function ➔ Probability (0 to 1) ➔ Classi
 
 ---
 
+## Sentiment analysis example
+
+The `notebooks/sentiment_analysis.ipynb` notebook uses TF–IDF features and logistic regression to classify text as negative (`-1`), neutral (`0`), or positive (`1`). It checks the input data, removes rows missing text or labels, normalizes text, and makes a stratified train/test split. The TF–IDF vocabulary is fitted on the training data only. Evaluation includes accuracy, per-class precision, recall, F1, and a confusion matrix.
+
+### Input data
+
+Place the dataset at `data/sentiment.csv`. It must contain `clean_text` and `category` columns, with sentiment labels `-1`, `0`, and `1`. The dataset is excluded from Git because it is local input data; use data you have permission to use and share.
+
+### Run the notebook
+
+From the repository root, install the dependencies and launch Jupyter:
+
+```bash
+python -m pip install -r requirements.txt
+python -m jupyter notebook notebooks/sentiment_analysis.ipynb
+```
+
+The notebook uses a fixed random seed and a stratified 80/20 split. Scores describe this dataset and split and are a baseline, not a guarantee of performance on new text.
+
 
 
