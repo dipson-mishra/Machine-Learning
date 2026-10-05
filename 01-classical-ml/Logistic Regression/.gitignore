@@ -1,0 +1,14 @@
+# Local datasets
+data/sentiment.csv
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter and editor files
+.ipynb_checkpoints/
+.idea/
+.DS_Store
+Thumbs.db
