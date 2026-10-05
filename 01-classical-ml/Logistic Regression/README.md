@@ -1,6 +1,6 @@
 # Logistic Regression 
 
-**Logistic Regression** is a regression model that predicts the probability of a categorical outcome (most commonly binary, such as positive/negative).
+**Logistic Regression** is a regression model that predicts the probability of a categorical outcome.
 
 ---
 
