@@ -1,0 +1,21 @@
+{
+  "best_model": "Ridge (CV-tuned)",
+  "best_alpha": 12.32846739442066,
+  "models": {
+    "Linear Regression": {
+      "train_rmse_usd": 101292.42487658796,
+      "test_rmse_usd": 101576.55710374842,
+      "test_r2": 0.2197133655363146
+    },
+    "Ridge (CV-tuned)": {
+      "train_rmse_usd": 101287.28902619162,
+      "test_rmse_usd": 101576.35877954586,
+      "test_r2": 0.21971641249080653
+    },
+    "Lasso (CV-tuned)": {
+      "train_rmse_usd": 101291.61126945111,
+      "test_rmse_usd": 101578.49791631114,
+      "test_r2": 0.21968354754260588
+    }
+  }
+}
