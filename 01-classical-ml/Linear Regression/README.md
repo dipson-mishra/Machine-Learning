@@ -42,4 +42,23 @@ Model selection should be based on validation or cross-validation results, with 
 
 ## Tools
 
-Python, pandas, NumPy, matplotlib, seaborn, scikit-learn, category-encoders, and Jupyter Notebook.
+Python, Flask, pandas, NumPy, matplotlib, seaborn, scikit-learn, category-encoders, and Jupyter Notebook.
+
+## Flask API
+
+Install the project dependencies and start the API from the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+python -m src.app
+```
+
+The service listens on port 5000. `GET /health` reports whether the service is running. `POST /predict` accepts one property:
+
+```bash
+curl -X POST http://localhost:5000/predict \
+  -H "Content-Type: application/json" \
+  -d '{"surface_covered_in_m2": 80, "property_type": "apartment", "state": "Distrito Federal"}'
+```
+
+For batch predictions, send `{ "properties": [ ... ] }` with the same three fields on each property. The response contains `predicted_price_aprox_usd` values. The API loads `src/real-estate-model.joblib`; run `python src/train.py` to create or refresh the model bundle if it is missing.
