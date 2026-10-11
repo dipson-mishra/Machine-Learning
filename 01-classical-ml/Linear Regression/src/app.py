@@ -24,16 +24,10 @@ def health():
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
+    """Handle both browser checks (GET) and model predictions (POST)."""
     if request.method == 'GET':
         return "This is a machine learning API endpoint. Send a POST request with JSON data to get a prediction!"
 
-    # Your existing POST / prediction logic goes here...
-    return "This is a machine learning API endpoint. Send a POST request with JSON data to get a prediction!"
-
-
-@app.post("/predict")
-def predict_price():
-    """Predict one or more prices from a JSON object or ``{"properties": [...]}"`."""
     payload = request.get_json(silent=True)
     if not isinstance(payload, dict):
         return jsonify(error="Request body must be a JSON object."), 400
