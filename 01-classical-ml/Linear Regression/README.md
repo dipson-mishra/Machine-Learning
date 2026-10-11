@@ -1,6 +1,6 @@
 # Linear, Lasso and Ridge Regression for Mexico City Real Estate
 
-Linear Regression tries to fit a line through data by making errors as small as possible. But if features overlap or you have too many variables, the model gets overly sensitive and overfits.Regularization fixes this by adding a penalty for having large coefficients ($\beta$). The hyperparameter $\lambda$ controls how strict that penalty is.
+Linear Regression tries to fit a line through data by making errors as small as possible. But if features overlap or you have too many variables, the model gets overly sensitive and overfits. Regularization fixes this by adding a penalty for having large coefficients ($\beta$). The hyperparameter $\lambda$ controls how strict that penalty is.
 
 This project explores Mexico City real-estate listings and compares baseline, ordinary least-squares, Ridge, and Lasso regression models. The complete workflow is documented in [`notebooks/real-estate.ipynb`](notebooks/real-estate.ipynb).
 
@@ -27,7 +27,7 @@ Run the notebook with `notebooks/` as the working directory so its `../data/...`
 
 ## Model results
 
-The models are trained on `log1p(price_aprox_usd)` to reduce target skew. Predictions are converted back with `expm1` before calculating USD RMSE. The notebook compares a log-scale baseline with ordinary least squares, RidgeCV, and LassoCV models; rerun the notebook to regenerate the current metrics after preprocessing or dependency changes.
+The models are trained on `log1p(price_aprox_usd)` to reduce target skew. Predictions are converted back with `expm1` before calculating USD RMSE. The training script selects the model using five-fold cross-validated USD RMSE on the training split, then reports test RMSE on the held-out test split. The notebook compares a log-scale baseline with ordinary least squares, RidgeCV, and LassoCV models; rerun the notebook to regenerate the current metrics after preprocessing or dependency changes.
 
 Model selection should be based on validation or cross-validation results, with the test set reserved for the final report. Remaining error reflects information not included in the three-feature model, such as finer-grained location, amenities, and property age.
 
@@ -35,10 +35,10 @@ Model selection should be based on validation or cross-validation results, with 
 
 | Model | Train RMSE | Test RMSE |
 | :--- | :---: | :---: |
-| **Baseline** | 115,906.39 | 111,243.98 |
-| **Linear Regression** | 95,877.50 | 93,179.66 |
-| **Ridge (CV-tuned)** | 95,877.63 | 93,172.18 |
-| **Lasso (CV-tuned)** | 95,877.50 | 93,179.66 |
+| **Baseline** | 119,939.64 | 119,885.43 |
+| **Linear Regression** | 101,292.42 | 101,576.56 |
+| **Ridge (CV-tuned)** | 101,287.29 | 101,576.36 |
+| **Lasso (CV-tuned)** | 101,291.61 | 101,578.50 |
 
 ## Tools
 
