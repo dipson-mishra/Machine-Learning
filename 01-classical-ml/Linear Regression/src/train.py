@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LassoCV, LinearRegression, RidgeCV
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_predict, train_test_split
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -106,10 +106,13 @@ def train_model(data_path: str | Path | None = None,
 
     results = {}
     for name, model in models.items():
+        cv_predictions = np.expm1(cross_val_predict(model, X_train, y_train, cv=5))
+        cv_rmse_usd = mean_squared_error(y_train_usd, cv_predictions) ** 0.5
         model.fit(X_train, y_train)
         train_predictions = np.expm1(model.predict(X_train))
         test_predictions = np.expm1(model.predict(X_test))
         results[name] = {
+            "cv_rmse_usd": float(cv_rmse_usd),
             "train_rmse_usd": float(mean_squared_error(
                 y_train_usd, train_predictions
             ) ** 0.5),
@@ -119,9 +122,8 @@ def train_model(data_path: str | Path | None = None,
             "test_r2": float(r2_score(y_test_usd, test_predictions)),
         }
 
-    # As in the notebook's final selection cell, select the model with minimum
-    # held-out test RMSE and persist the feature schema with it for inference.
-    best_name = min(results, key=lambda name: results[name]["test_rmse_usd"])
+    # Select on training-fold cross-validation; keep the test set for reporting.
+    best_name = min(results, key=lambda name: results[name]["cv_rmse_usd"])
     best_model = models[best_name]
     best_alpha = None
     if best_name.startswith("Ridge"):
