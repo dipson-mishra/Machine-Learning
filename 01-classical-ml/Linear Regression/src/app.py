@@ -22,6 +22,15 @@ def health():
     return jsonify(status="ok")
 
 
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    if request.method == 'GET':
+        return "This is a machine learning API endpoint. Send a POST request with JSON data to get a prediction!"
+
+    # Your existing POST / prediction logic goes here...
+    return "This is a machine learning API endpoint. Send a POST request with JSON data to get a prediction!"
+
+
 @app.post("/predict")
 def predict_price():
     """Predict one or more prices from a JSON object or ``{"properties": [...]}"`."""
