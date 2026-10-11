@@ -23,7 +23,7 @@ def health():
 
 
 @app.route('/predict', methods=['GET', 'POST'])
-def predict():
+def handle_predict():  # Changed from 'predict' to 'handle_predict'
     """Handle both browser checks (GET) and model predictions (POST)."""
     if request.method == 'GET':
         return "This is a machine learning API endpoint. Send a POST request with JSON data to get a prediction!"
