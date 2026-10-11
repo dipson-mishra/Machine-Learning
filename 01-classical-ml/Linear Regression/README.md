@@ -49,12 +49,19 @@ Python, Flask, pandas, NumPy, matplotlib, seaborn, scikit-learn, category-encode
 
 ## Flask API
 
-Install the project dependencies and start the API from this project directory (`01-classical-ml/Linear Regression`):
+Install the shared dependencies from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
+```
+
+Then start the API from this project directory (`01-classical-ml/Linear Regression`):
+
+```bash
 python -m src.app
 ```
+
+To build the Docker image, run `docker build -f "01-classical-ml/Linear Regression/Dockerfile" -t real-estate-api .` from the repository root so the image can access the shared requirements file.
 
 The service listens on port 5000. `GET /health` reports whether the service is running. `POST /predict` accepts one property:
 
@@ -68,11 +75,13 @@ For batch predictions, send `{ "properties": [ ... ] }` with the same three fiel
 
 ## Streamlit website
 
-From this project directory, install the dependencies and start the website with:
+The live website is [Mexico City Real Estate Price Predictor](https://l-regression.streamlit.app).
+
+Install dependencies once from the repository root using the shared `requirements.txt`, then start the app from the repository root with:
 
 ```bash
 python -m pip install -r requirements.txt
-streamlit run streamlit_app.py
+streamlit run "01-classical-ml/Linear Regression/streamlit_app.py"
 ```
 
 The property type and state choices are read from the trained model bundle. Changing a supported category changes its encoded model input and can change the estimate; the size of the effect depends on the learned coefficient. The trained category levels come from the filtered training data, so the app may offer fewer regions than the full dataset.

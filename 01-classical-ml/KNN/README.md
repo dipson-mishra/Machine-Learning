@@ -14,21 +14,23 @@ models/               Trained model and evaluation metrics (created on training)
 notebooks/            Exploratory notebook
 src/prepare_data.py   Download data and create stratified splits
 src/train.py          Fit and evaluate the KNN classifier
-requirements.txt      Python dependencies
+../../requirements.txt Shared repository dependencies
 ```
 
 ## Setup
 
-Use Python 3.10 or newer. From this directory, create and activate a virtual
-environment, then install the dependencies:
+Use Python 3.10 or newer. Create and activate a virtual environment from the
+repository root, then install the shared dependencies:
 
 ```bash
 python -m venv .venv
-# Windows PowerShell
+# Windows PowerShell (from repository root)
 .venv\Scripts\Activate.ps1
 # macOS/Linux: source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
+
+Run the KNN commands below from this project directory. From the repository root, switch into it with `cd "01-classical-ml/KNN"` (or the equivalent for your shell).
 
 ## Prepare the data
 

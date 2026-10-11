@@ -4,6 +4,20 @@ Welcome to my Machine Learning repository! This workspace serves as a hands-on p
 
 > **Note:** This repository is an active work in progress. Projects will range from quick technical experiments and model implementations to fully polished end-to-end applications.
 
+## Setup
+
+The repository uses one shared dependency file. Create and activate a virtual environment from the repository root, then install all project dependencies:
+
+```bash
+python -m venv .venv
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+# macOS/Linux: source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+Individual projects may need only a subset of these packages, but use this root `requirements.txt` for local development and Streamlit Community Cloud deployments.
+
 ---
 
 ## 🎯 Objectives & Vision
@@ -39,4 +53,5 @@ Each project lives in its own directory containing dataset references, notebooks
 ├── 02-deep-learning/         # Neural Networks, Computer Vision, NLP (Planned)
 │   └── project-name/
 │
+├── requirements.txt          # Shared dependencies for all projects
 └── README.md                 # Main repository overview
