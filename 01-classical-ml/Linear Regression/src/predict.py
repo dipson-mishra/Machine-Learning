@@ -30,7 +30,11 @@ def predict(data: pd.DataFrame, model_path: str | Path | None = None) -> pd.Data
         )
 
     bundle = joblib.load(bundle_path)
-    features = build_feature_matrix(data, feature_columns=bundle["feature_columns"])
+    features = build_feature_matrix(
+        data,
+        feature_columns=bundle["feature_columns"],
+        category_levels=bundle["category_levels"],
+    )
     predicted_log_price = bundle["model"].predict(features)
     result = data.copy()
     result["predicted_price_aprox_usd"] = np.expm1(predicted_log_price)

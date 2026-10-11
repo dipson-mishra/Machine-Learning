@@ -28,27 +28,36 @@ METRICS_FILE = "training-metrics.json"
 
 
 def build_feature_matrix(data: pd.DataFrame,
-                         feature_columns: list[str] | None = None) -> pd.DataFrame:
+                         feature_columns: list[str] | None = None,
+                         category_levels: dict[str, list[str]] | None = None) -> pd.DataFrame:
     """Apply the notebook's categorical baseline and one-hot feature encoding."""
     missing = sorted(set(FEATURES) - set(data.columns))
     if missing:
         raise ValueError(f"Input data is missing required feature columns: {missing}")
 
     X = data[FEATURES].copy()
-    for column in ("property_type", "state"):
-        # Match the notebook: the most common level is the reference category.
-        if feature_columns is None:
+    if feature_columns is None:
+        category_levels = {}
+        for column in ("property_type", "state"):
             baseline = X[column].value_counts().idxmax()
-            levels = [baseline] + sorted(level for level in X[column].dropna().unique()
-                                         if level != baseline)
-            X[column] = pd.Categorical(X[column], categories=levels)
+            category_levels[column] = [baseline] + sorted(
+                level for level in X[column].dropna().unique() if level != baseline
+            )
 
-    X = pd.get_dummies(
-        X, columns=["property_type", "state"], drop_first=True, dtype=float
-    )
+    if category_levels is None:
+        raise ValueError("Saved category levels are required to encode prediction data")
+
+    encoded = X[["surface_covered_in_m2"]].copy()
+    for column in ("property_type", "state"):
+        levels = category_levels[column]
+        unknown = sorted(set(X[column].dropna()) - set(levels))
+        if unknown:
+            raise ValueError(f"Unsupported {column} value(s): {unknown}. Choose a trained category.")
+        for level in levels[1:]:
+            encoded[f"{column}_{level}"] = (X[column] == level).astype(float)
     if feature_columns is not None:
-        X = X.reindex(columns=feature_columns, fill_value=0.0)
-    return X
+        encoded = encoded.reindex(columns=feature_columns, fill_value=0.0)
+    return encoded
 
 
 def _load_training_data(data_path: str | Path | None) -> pd.DataFrame:
@@ -85,7 +94,13 @@ def train_model(data_path: str | Path | None = None,
     data = data.dropna(subset=FEATURES + [TARGET]).copy()
     data = _select_modeling_rows(data)
 
-    X = build_feature_matrix(data)
+    category_levels = {}
+    for column in ("property_type", "state"):
+        baseline = data[column].value_counts().idxmax()
+        category_levels[column] = [baseline] + sorted(
+            level for level in data[column].unique() if level != baseline
+        )
+    X = build_feature_matrix(data, category_levels=category_levels)
     feature_columns = list(X.columns)
     y = np.log1p(data[TARGET].astype(float))
     X_train, X_test, y_train, y_test = train_test_split(
@@ -140,6 +155,7 @@ def train_model(data_path: str | Path | None = None,
         "model": best_model,
         "model_name": best_name,
         "feature_columns": feature_columns,
+        "category_levels": category_levels,
         "features": FEATURES,
         "target": TARGET,
         "target_transform": "log1p",

@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
-from src.predict import predict  # Adjust import based on where your predict function lives
+import joblib
+from pathlib import Path
+from src.predict import predict
+
+MODEL_BUNDLE = Path(__file__).parent / "src" / "real-estate-model.joblib"
+bundle = joblib.load(MODEL_BUNDLE)
+category_levels = bundle["category_levels"]
 
 st.title("🇲🇽 Mexico City Real Estate Price Predictor")
 st.write("Enter the property details below to estimate its price in USD.")
@@ -11,11 +17,11 @@ surface_covered_in_m2 = st.number_input(
 )
 
 property_type = st.selectbox(
-    "Property Type", options=["apartment", "house", "ph"]
+    "Property Type", options=category_levels["property_type"]
 )
 
 state = st.selectbox(
-    "State / Region", options=["Distrito Federal", "Edo. de México", "Morelos", "Querétaro"]
+    "State / Region", options=category_levels["state"]
 )
 
 # Button to trigger prediction
