@@ -10,6 +10,9 @@ category_levels = bundle["category_levels"]
 
 st.title("🇲🇽 Mexico City Real Estate Price Predictor")
 st.write("Enter the property details below to estimate its price in USD.")
+st.caption(
+    f"Model: {bundle['model_name']} using covered area, property type, and state/region."
+)
 
 # Create input widgets for your features
 surface_covered_in_m2 = st.number_input(

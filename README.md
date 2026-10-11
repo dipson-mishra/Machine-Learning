@@ -4,6 +4,10 @@ Welcome to my Machine Learning repository! This workspace serves as a hands-on p
 
 > **Note:** This repository is an active work in progress. Projects will range from quick technical experiments and model implementations to fully polished end-to-end applications.
 
+## Live demo
+
+Try the [Mexico City Real Estate Price Predictor](https://l-regression.streamlit.app), powered by the Ridge regression model in this repository.
+
 ## Setup
 
 The repository uses one shared dependency file. Create and activate a virtual environment from the repository root, then install all project dependencies:
