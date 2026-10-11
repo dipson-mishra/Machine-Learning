@@ -12,7 +12,7 @@ The 3 Models at a Glance
 
 - `notebooks/real-estate.ipynb` — data exploration, cleaning, visualization, feature engineering, modeling, and evaluation.
 - `data/` — five source CSV files (`mexico-city-real-estate-1.csv` through `mexico-city-real-estate-5.csv`).
-- `requirements.txt` — Python dependencies used by the notebook.
+- `../../requirements.txt` — Python dependencies used by the notebook.
 
 Run the notebook with `notebooks/` as the working directory so its `../data/...` paths resolve correctly. The cleaned combined dataset is written to `data/mexico-real-estate-combined-clean.csv`.
 
