@@ -1,0 +1,15 @@
+gunicorn
+streamlit
+pandas
+Flask
+matplotlib
+numpy
+scikit-learn
+category-encoders
+seaborn
+requests
+waitress
+jupyter
+imbalanced-learn
+joblib
+ucimlrepo
