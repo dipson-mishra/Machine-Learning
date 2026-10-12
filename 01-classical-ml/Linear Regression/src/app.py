@@ -3,18 +3,34 @@
 from __future__ import annotations
 
 import math
+from pathlib import Path
+import joblib
 
 from flask import Flask, jsonify, request
 
 try:  # Support both ``python src/app.py`` and ``python -m src.app``.
-    from .predict import predict
+    from .predict import predict, MODEL_FILE  # assuming MODEL_FILE is accessible from predict/train
 except ImportError:  # pragma: no cover - exercised by direct script invocation
     from predict import predict
+    from train import MODEL_FILE
 
 
 app = Flask(__name__)
 REQUIRED_FIELDS = ("surface_covered_in_m2", "property_type", "state")
 
+# Load the model bundle once on startup to grab category levels and cache the model
+project_root = Path(__file__).resolve().parent.parent
+bundle_path = project_root / "src" / MODEL_FILE
+try:
+    BUNDLE = joblib.load(bundle_path)
+except Exception:
+    BUNDLE = None
+
+@app.route("/options")
+def options():
+    if not BUNDLE or "category_levels" not in BUNDLE:
+        return jsonify(error="Model bundle or category levels not found. Train the model first."), 503
+    return jsonify(BUNDLE["category_levels"])
 
 @app.get("/health")
 def health():
@@ -23,7 +39,7 @@ def health():
 
 
 @app.route('/predict', methods=['GET', 'POST'])
-def handle_predict():  # Changed from 'predict' to 'handle_predict'
+def handle_predict():
     """Handle both browser checks (GET) and model predictions (POST)."""
     if request.method == 'GET':
         return "This is a machine learning API endpoint. Send a POST request with JSON data to get a prediction!"

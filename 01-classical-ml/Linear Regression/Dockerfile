@@ -2,12 +2,12 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY ../../requirements.txt .
+COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY ["01-classical-ml/Linear Regression/", "."]
 
 EXPOSE 5000
 
-CMD ["waitress-serve", "--listen=0.0.0.0:5000", "src.app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "src.app:app"]
